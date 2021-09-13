@@ -1,0 +1,3 @@
+#!/bin/bash
+
+docker-compose build || true && docker-compose up || true

@@ -1,6 +1,7 @@
 <?php
-define( 'WP_CACHE_KEY_SALT', 'aahri.42.fr');
-define('WP_CACHE', true);
+// define('WP_CACHE', true);
+define('WP_REDIS_HOST', 'redis');
+define( 'WP_CACHE_KEY_SALT', 'Rusya_Myakish');
 define( 'DB_NAME', 'wordpress' );
 define( 'DB_USER', 'aahri' );
 define( 'DB_PASSWORD', 'aahri' );

@@ -1,6 +1,13 @@
 version: '3.3'
 
 services:
+    redis:
+     container_name: redis
+     build: ./requirements/redis
+     networks: 
+      - app-network
+     restart: always
+
     mariadb:
       container_name: mariadb
       build: ./requirements/mariadb
@@ -35,6 +42,9 @@ services:
         - app-network
       depends_on: 
         - mariadb
+        - redis
+      # links:
+      #  - redis
       env_file:
         - ./.env 
       restart: always
@@ -46,13 +56,13 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: /home/john/data/wp
+      device: /home/ruslan/data/wp
   db:
     driver: local
     driver_opts:
       type: none
       o: bind
-      device: /home/john/data/db
+      device: /home/ruslan/data/db
 
 networks:
   app-network:

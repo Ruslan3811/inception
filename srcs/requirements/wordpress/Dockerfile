@@ -12,7 +12,7 @@ RUN sed -i '36 s/\/run\/php\/php7.3-fpm.sock/9000/' /etc/php/7.3/fpm/pool.d/www.
 RUN mkdir -p /run/php/
 RUN chown -R www-data:www-data /var/www/html/wordpress
 RUN chmod -R 775 /var/www/html/wordpress
-COPY ./tools/wp.sh /tmp/
+COPY ./wp.sh /tmp/
 RUN chmod 777 /tmp/wp.sh
 EXPOSE 9000
 ENTRYPOINT [ "/tmp/wp.sh" ]

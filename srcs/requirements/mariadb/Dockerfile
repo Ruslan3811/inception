@@ -4,7 +4,7 @@ RUN apt-get -y update
 RUN apt-get -y upgrade
 RUN apt-get -y install default-mysql-server
 
-COPY ./tools/db.sh /tmp/
+COPY db.sh /tmp/
 COPY my.cnf /etc/mysql/my.cnf
 
 RUN chmod +x /tmp/db.sh
